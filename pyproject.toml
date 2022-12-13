@@ -2,7 +2,7 @@
 name = "mbus-gem-decoder"
 version = "0.1.0"
 description = "MBUS-GEM decoder"
-authors = ["René <rene.pihlak@ttu.ee>"]
+authors = ["René <daredemoikari@gmail.com>"]
 license = "GPLv3"
 readme = "README.md"
 packages = [{include = "mbus_gem_decoder"}]
