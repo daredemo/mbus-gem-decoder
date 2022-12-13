@@ -1,0 +1,22 @@
+{
+  "spellright.language": [
+    "en_GB",
+    "et_EE"
+  ],
+  "spellright.documentTypes": [
+    "markdown",
+    "latex",
+    "plaintext",
+    "python"
+  ],
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "editor.rulers": [
+  79
+  ],
+  "[python]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4  
+  }  
+}

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+doxypypy -a -c -e -k $1
