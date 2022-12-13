@@ -1,0 +1,4 @@
+Decode MBUS-\/\+GEM register data into human-\/readable JSON.\hypertarget{md_README_autotoc_md1}{}\doxysubsection{Introduction}\label{md_README_autotoc_md1}
+The goal of {\ttfamily mbusgemdecoder} package is to convert a list of ten integer values into human-\/readable data object. {\ttfamily mbusgemdecoder} package automatically detects the type ({\ttfamily MBUS-\/\+GEM gateway}, {\ttfamily METER}, {\ttfamily METER VALUE}) of the register(s) and parses the data accordingly.
+
+However, {\ttfamily mbusgemdecoder} package is only for data conversion. Use, for example, \href{https://pypi.org/project/pyModbusTCP/}{\texttt{ py\+Modbus\+TCP}} to obtain data to convert with {\ttfamily mbusgemdecoder}. 

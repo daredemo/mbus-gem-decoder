@@ -1,0 +1,199 @@
+\hypertarget{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode}{}\doxysubsection{mbus\+\_\+gem\+\_\+decoder.\+mbusdecode.\+MBus\+Decode Class Reference}
+\label{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode}\index{mbus\_gem\_decoder.mbusdecode.MBusDecode@{mbus\_gem\_decoder.mbusdecode.MBusDecode}}
+
+
+MBUS-\/\+GEM class for decoding data from MBUS-\/\+GEM gateway\textquotesingle{}s registers.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_abbfc60ad0dc3cd56cb33396a59638e2d}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, list\mbox{[}int\mbox{]} \mbox{\hyperlink{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_ab56e55eab097f4be34b0f90119132576}{ten\+\_\+regs}}, int \mbox{\hyperlink{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_a99a342293dce8614cd55d7de5df69177}{gw\+\_\+reg}}, int \mbox{\hyperlink{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_a65f6524081c4296e063538026f6f55ff}{human}}=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_abca2a656549fe154e56b238e8e1dcfc0}{\+\_\+\+\_\+str\+\_\+\+\_\+}} (self)
+\item 
+object \mbox{\hyperlink{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_a4625b31833b680c840f4cd2379b8c862}{to\+\_\+object}} (self)
+\begin{DoxyCompactList}\small\item\em Convert class to object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_ab56e55eab097f4be34b0f90119132576}{ten\+\_\+regs}}
+\item 
+\mbox{\hyperlink{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_a99a342293dce8614cd55d7de5df69177}{gw\+\_\+reg}}
+\item 
+\mbox{\hyperlink{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_a65f6524081c4296e063538026f6f55ff}{human}}
+\item 
+\mbox{\hyperlink{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_aefa17b3b334ff3be81c2fe2118e62508}{conversion}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+MBUS-\/\+GEM class for decoding data from MBUS-\/\+GEM gateway\textquotesingle{}s registers. 
+
+Definition at line \mbox{\hyperlink{mbusdecode_8py_source_l00028}{28}} of file \mbox{\hyperlink{mbusdecode_8py_source}{mbusdecode.\+py}}.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_abbfc60ad0dc3cd56cb33396a59638e2d}\label{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_abbfc60ad0dc3cd56cb33396a59638e2d}} 
+\index{mbus\_gem\_decoder.mbusdecode.MBusDecode@{mbus\_gem\_decoder.mbusdecode.MBusDecode}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!mbus\_gem\_decoder.mbusdecode.MBusDecode@{mbus\_gem\_decoder.mbusdecode.MBusDecode}}
+\doxyparagraph{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None mbus\+\_\+gem\+\_\+decoder.\+mbusdecode.\+MBus\+Decode.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs,  }\item[{int}]{gw\+\_\+reg,  }\item[{int }]{human = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & Ten register values as list of integers. \\
+\hline
+{\em gw\+\_\+reg} & Register as declared in the MBUS-\/\+GEM gateway. human (int, optional)\+: Generate human readable values\+: 0 -- ignore, \\
+\hline
+{\em 1} & only human readable values, 2 -- both. Defaults to 0. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{mbusdecode_8py_source_l00038}{38}} of file \mbox{\hyperlink{mbusdecode_8py_source}{mbusdecode.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042         \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00043 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00044 \textcolor{stringliteral}{        }\textcolor{keywordflow}{if} gw\_reg < 0:}
+\DoxyCodeLine{00045             \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Gateway register cannot be negative"{}})}
+\DoxyCodeLine{00046         \textcolor{keywordflow}{if} len(ten\_regs) != 10:}
+\DoxyCodeLine{00047             \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Must provide exactly ten register values"{}})}
+\DoxyCodeLine{00048         \textcolor{comment}{\# if human not in [0, 1, 2]:}}
+\DoxyCodeLine{00049         \textcolor{keywordflow}{if} human \textcolor{keywordflow}{not} \textcolor{keywordflow}{in} READABILITY\_TYPES\_ARRAY:}
+\DoxyCodeLine{00050             \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Illegal value for human readability"{}})}
+\DoxyCodeLine{00051         self.ten\_regs = ten\_regs}
+\DoxyCodeLine{00052         self.gw\_reg = gw\_reg}
+\DoxyCodeLine{00053         self.human = human}
+\DoxyCodeLine{00054         self.conversion = \textcolor{keywordtype}{None}}
+\DoxyCodeLine{00055         reg\_type = abs(self.ten\_regs[7] >> 8)}
+\DoxyCodeLine{00056         \textcolor{keywordflow}{if} reg\_type \textcolor{keywordflow}{in} REGISTER\_TYPES\_ARRAY:}
+\DoxyCodeLine{00057             \textcolor{keywordflow}{if} reg\_type == RegisterType.METER\_ENTRY.value:}
+\DoxyCodeLine{00058                 self.conversion = MBusMeterEntry(}
+\DoxyCodeLine{00059                     self.ten\_regs, self.gw\_reg, self.human)}
+\DoxyCodeLine{00060             \textcolor{keywordflow}{elif} reg\_type == RegisterType.METER.value:}
+\DoxyCodeLine{00061                 self.conversion = MBusMeter(}
+\DoxyCodeLine{00062                     self.ten\_regs, self.gw\_reg, self.human)}
+\DoxyCodeLine{00063             \textcolor{keywordflow}{elif} reg\_type == RegisterType.MBUS\_GEM.value:}
+\DoxyCodeLine{00064                 self.conversion = MBusMBus(}
+\DoxyCodeLine{00065                     self.ten\_regs, self.gw\_reg, self.human)}
+\DoxyCodeLine{00066             \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{00067                 \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Illegal register type"{}})}
+\DoxyCodeLine{00068         \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{00069             \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Illegal register type"{}})}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071             \textcolor{comment}{\# self.conversion = switch\_.get(}}
+\DoxyCodeLine{00072             \textcolor{comment}{\#     RegisterType(abs(self.ten\_regs[7] >> 8)), \{\})}}
+\DoxyCodeLine{00073 }
+
+\end{DoxyCode}
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_abca2a656549fe154e56b238e8e1dcfc0}\label{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_abca2a656549fe154e56b238e8e1dcfc0}} 
+\index{mbus\_gem\_decoder.mbusdecode.MBusDecode@{mbus\_gem\_decoder.mbusdecode.MBusDecode}!\_\_str\_\_@{\_\_str\_\_}}
+\index{\_\_str\_\_@{\_\_str\_\_}!mbus\_gem\_decoder.mbusdecode.MBusDecode@{mbus\_gem\_decoder.mbusdecode.MBusDecode}}
+\doxyparagraph{\texorpdfstring{\_\_str\_\_()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily  str mbus\+\_\+gem\+\_\+decoder.\+mbusdecode.\+MBus\+Decode.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{mbusdecode_8py_source_l00074}{74}} of file \mbox{\hyperlink{mbusdecode_8py_source}{mbusdecode.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074     \textcolor{keyword}{def }\_\_str\_\_(self) -\/> str:}
+\DoxyCodeLine{00075         \textcolor{keywordflow}{if} isinstance(self.conversion, type(\textcolor{keywordtype}{None})):}
+\DoxyCodeLine{00076             \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Conversion failed"{}})}
+\DoxyCodeLine{00077         \textcolor{keywordflow}{return} str(self.conversion)}
+\DoxyCodeLine{00078 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_a4625b31833b680c840f4cd2379b8c862}\label{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_a4625b31833b680c840f4cd2379b8c862}} 
+\index{mbus\_gem\_decoder.mbusdecode.MBusDecode@{mbus\_gem\_decoder.mbusdecode.MBusDecode}!to\_object@{to\_object}}
+\index{to\_object@{to\_object}!mbus\_gem\_decoder.mbusdecode.MBusDecode@{mbus\_gem\_decoder.mbusdecode.MBusDecode}}
+\doxyparagraph{\texorpdfstring{to\_object()}{to\_object()}}
+{\footnotesize\ttfamily  object mbus\+\_\+gem\+\_\+decoder.\+mbusdecode.\+MBus\+Decode.\+to\+\_\+object (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Convert class to object. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & Conversion has failed\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+
+
+object Converted object 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mbusdecode_8py_source_l00087}{87}} of file \mbox{\hyperlink{mbusdecode_8py_source}{mbusdecode.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00087         \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00088 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00089 \textcolor{stringliteral}{        }\textcolor{keywordflow}{if} isinstance(self.conversion, type(\textcolor{keywordtype}{None})):}
+\DoxyCodeLine{00090             \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Conversion failed"{}})}
+\DoxyCodeLine{00091         \textcolor{keywordflow}{return} self.conversion.to\_object()}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_aefa17b3b334ff3be81c2fe2118e62508}\label{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_aefa17b3b334ff3be81c2fe2118e62508}} 
+\index{mbus\_gem\_decoder.mbusdecode.MBusDecode@{mbus\_gem\_decoder.mbusdecode.MBusDecode}!conversion@{conversion}}
+\index{conversion@{conversion}!mbus\_gem\_decoder.mbusdecode.MBusDecode@{mbus\_gem\_decoder.mbusdecode.MBusDecode}}
+\doxyparagraph{\texorpdfstring{conversion}{conversion}}
+{\footnotesize\ttfamily mbus\+\_\+gem\+\_\+decoder.\+mbusdecode.\+MBus\+Decode.\+conversion}
+
+
+
+Definition at line \mbox{\hyperlink{mbusdecode_8py_source_l00054}{54}} of file \mbox{\hyperlink{mbusdecode_8py_source}{mbusdecode.\+py}}.
+
+\mbox{\Hypertarget{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_a99a342293dce8614cd55d7de5df69177}\label{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_a99a342293dce8614cd55d7de5df69177}} 
+\index{mbus\_gem\_decoder.mbusdecode.MBusDecode@{mbus\_gem\_decoder.mbusdecode.MBusDecode}!gw\_reg@{gw\_reg}}
+\index{gw\_reg@{gw\_reg}!mbus\_gem\_decoder.mbusdecode.MBusDecode@{mbus\_gem\_decoder.mbusdecode.MBusDecode}}
+\doxyparagraph{\texorpdfstring{gw\_reg}{gw\_reg}}
+{\footnotesize\ttfamily mbus\+\_\+gem\+\_\+decoder.\+mbusdecode.\+MBus\+Decode.\+gw\+\_\+reg}
+
+
+
+Definition at line \mbox{\hyperlink{mbusdecode_8py_source_l00052}{52}} of file \mbox{\hyperlink{mbusdecode_8py_source}{mbusdecode.\+py}}.
+
+\mbox{\Hypertarget{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_a65f6524081c4296e063538026f6f55ff}\label{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_a65f6524081c4296e063538026f6f55ff}} 
+\index{mbus\_gem\_decoder.mbusdecode.MBusDecode@{mbus\_gem\_decoder.mbusdecode.MBusDecode}!human@{human}}
+\index{human@{human}!mbus\_gem\_decoder.mbusdecode.MBusDecode@{mbus\_gem\_decoder.mbusdecode.MBusDecode}}
+\doxyparagraph{\texorpdfstring{human}{human}}
+{\footnotesize\ttfamily mbus\+\_\+gem\+\_\+decoder.\+mbusdecode.\+MBus\+Decode.\+human}
+
+
+
+Definition at line \mbox{\hyperlink{mbusdecode_8py_source_l00053}{53}} of file \mbox{\hyperlink{mbusdecode_8py_source}{mbusdecode.\+py}}.
+
+\mbox{\Hypertarget{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_ab56e55eab097f4be34b0f90119132576}\label{classmbus__gem__decoder_1_1mbusdecode_1_1MBusDecode_ab56e55eab097f4be34b0f90119132576}} 
+\index{mbus\_gem\_decoder.mbusdecode.MBusDecode@{mbus\_gem\_decoder.mbusdecode.MBusDecode}!ten\_regs@{ten\_regs}}
+\index{ten\_regs@{ten\_regs}!mbus\_gem\_decoder.mbusdecode.MBusDecode@{mbus\_gem\_decoder.mbusdecode.MBusDecode}}
+\doxyparagraph{\texorpdfstring{ten\_regs}{ten\_regs}}
+{\footnotesize\ttfamily mbus\+\_\+gem\+\_\+decoder.\+mbusdecode.\+MBus\+Decode.\+ten\+\_\+regs}
+
+
+
+Definition at line \mbox{\hyperlink{mbusdecode_8py_source_l00051}{51}} of file \mbox{\hyperlink{mbusdecode_8py_source}{mbusdecode.\+py}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mbus\+\_\+gem\+\_\+decoder/\mbox{\hyperlink{mbusdecode_8py}{mbusdecode.\+py}}\end{DoxyCompactItemize}

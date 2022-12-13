@@ -1,0 +1,9 @@
+venv
+.vscode
+test.py
+Doxyfile
+doxygen-*
+py_filter
+__pycache__
+*/__pycache__
+**/__pycache__

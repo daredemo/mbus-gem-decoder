@@ -1,0 +1,413 @@
+\begin{theindex}
+
+  \item {\_\_init\_\_}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmbus.MBusMBus}, 
+		\hyperpage{21}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeter.MBusMeter}, 
+		\hyperpage{25}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeterentry.MBusMeterEntry}, 
+		\hyperpage{29}
+    \subitem {mbus\_gem\_decoder.mbusdecode.MBusDecode}, \hyperpage{18}
+  \item {\_\_str\_\_}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmbus.MBusMBus}, 
+		\hyperpage{22}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeter.MBusMeter}, 
+		\hyperpage{26}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeterentry.MBusMeterEntry}, 
+		\hyperpage{30}
+    \subitem {mbus\_gem\_decoder.mbusdecode.MBusDecode}, \hyperpage{19}
+
+  \indexspace
+
+  \item {BOTH}
+    \subitem {mbus\_gem\_decoder.conversion.utils.mbustypes.ReadabilityTypes}, 
+		\hyperpage{35}
+
+  \indexspace
+
+  \item {conversion}
+    \subitem {mbus\_gem\_decoder.mbusdecode.MBusDecode}, \hyperpage{20}
+  \item {convert\_data\_in\_regs\_mbusgem}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmbus.MBusMBus}, 
+		\hyperpage{22}
+  \item {convert\_data\_in\_regsmeter}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeter.MBusMeter}, 
+		\hyperpage{26}
+  \item {convert\_data\_in\_regsmeter\_entry}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeterentry.MBusMeterEntry}, 
+		\hyperpage{30}
+
+  \indexspace
+
+  \item {flag1}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeter.MBusMeter}, 
+		\hyperpage{27}
+  \item {flag2}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeter.MBusMeter}, 
+		\hyperpage{27}
+  \item {float}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeterentry.MBusMeterEntry}, 
+		\hyperpage{31}
+
+  \indexspace
+
+  \item {get\_float\_value}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{6}
+  \item {get\_integer\_value}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{6}
+  \item {get\_scale}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{6}
+  \item {get\_sign\_correction}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{7}
+  \item {get\_timestamp}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{7}
+  \item {get\_unit}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{8}
+  \item {get\_unit\_type}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{8}
+  \item {get\_unix\_timestamp}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{9}
+  \item {gw\_reg}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmbus.MBusMBus}, 
+		\hyperpage{23}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeter.MBusMeter}, 
+		\hyperpage{27}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeterentry.MBusMeterEntry}, 
+		\hyperpage{31}
+    \subitem {mbus\_gem\_decoder.mbusdecode.MBusDecode}, \hyperpage{20}
+
+  \indexspace
+
+  \item {human}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmbus.MBusMBus}, 
+		\hyperpage{23}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeter.MBusMeter}, 
+		\hyperpage{27}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeterentry.MBusMeterEntry}, 
+		\hyperpage{31}
+    \subitem {mbus\_gem\_decoder.mbusdecode.MBusDecode}, \hyperpage{20}
+  \item {HUMAN\_READABLE}
+    \subitem {mbus\_gem\_decoder.conversion.utils.mbustypes.ReadabilityTypes}, 
+		\hyperpage{36}
+
+  \indexspace
+
+  \item {int32\_to\_ieee}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{9}
+  \item {integer}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeterentry.MBusMeterEntry}, 
+		\hyperpage{32}
+
+  \indexspace
+
+  \item {manufacturer}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeter.MBusMeter}, 
+		\hyperpage{28}
+  \item {MBUS\_GEM}
+    \subitem {mbus\_gem\_decoder.conversion.utils.mbustypes.RegisterType}, 
+		\hyperpage{37}
+  \item {mbus\_gem\_decoder}, \hyperpage{3}
+  \item {mbus\_gem\_decoder.conversion}, \hyperpage{4}
+  \item {mbus\_gem\_decoder.conversion.mbusmbus}, \hyperpage{4}
+  \item {mbus\_gem\_decoder.conversion.mbusmbus.MBusMBus}, 
+		\hyperpage{20}
+    \subitem {\_\_init\_\_}, \hyperpage{21}
+    \subitem {\_\_str\_\_}, \hyperpage{22}
+    \subitem {convert\_data\_in\_regs\_mbusgem}, \hyperpage{22}
+    \subitem {gw\_reg}, \hyperpage{23}
+    \subitem {human}, \hyperpage{23}
+    \subitem {protocol}, \hyperpage{23}
+    \subitem {reg}, \hyperpage{23}
+    \subitem {register\_type}, \hyperpage{24}
+    \subitem {serial}, \hyperpage{24}
+    \subitem {ten\_regs}, \hyperpage{24}
+    \subitem {to\_object}, \hyperpage{23}
+    \subitem {unix\_timestamp}, \hyperpage{24}
+    \subitem {version}, \hyperpage{24}
+  \item {mbus\_gem\_decoder.conversion.mbusmeter}, \hyperpage{4}
+  \item {mbus\_gem\_decoder.conversion.mbusmeter.MBusMeter}, 
+		\hyperpage{24}
+    \subitem {\_\_init\_\_}, \hyperpage{25}
+    \subitem {\_\_str\_\_}, \hyperpage{26}
+    \subitem {convert\_data\_in\_regsmeter}, \hyperpage{26}
+    \subitem {flag1}, \hyperpage{27}
+    \subitem {flag2}, \hyperpage{27}
+    \subitem {gw\_reg}, \hyperpage{27}
+    \subitem {human}, \hyperpage{27}
+    \subitem {manufacturer}, \hyperpage{28}
+    \subitem {medium}, \hyperpage{28}
+    \subitem {reg}, \hyperpage{28}
+    \subitem {register\_type}, \hyperpage{28}
+    \subitem {serial}, \hyperpage{28}
+    \subitem {ten\_regs}, \hyperpage{28}
+    \subitem {to\_object}, \hyperpage{27}
+    \subitem {unix\_timestamp}, \hyperpage{28}
+    \subitem {version}, \hyperpage{28}
+  \item {mbus\_gem\_decoder.conversion.mbusmeterentry}, \hyperpage{4}
+  \item {mbus\_gem\_decoder.conversion.mbusmeterentry.MBusMeterEntry}, 
+		\hyperpage{29}
+    \subitem {\_\_init\_\_}, \hyperpage{29}
+    \subitem {\_\_str\_\_}, \hyperpage{30}
+    \subitem {convert\_data\_in\_regsmeter\_entry}, \hyperpage{30}
+    \subitem {float}, \hyperpage{31}
+    \subitem {gw\_reg}, \hyperpage{31}
+    \subitem {human}, \hyperpage{31}
+    \subitem {integer}, \hyperpage{32}
+    \subitem {reg}, \hyperpage{32}
+    \subitem {register\_type}, \hyperpage{32}
+    \subitem {scale}, \hyperpage{32}
+    \subitem {ten\_regs}, \hyperpage{32}
+    \subitem {to\_object}, \hyperpage{31}
+    \subitem {unit}, \hyperpage{32}
+    \subitem {unix\_timestamp}, \hyperpage{32}
+  \item {mbus\_gem\_decoder.conversion.utils}, \hyperpage{4}
+  \item {mbus\_gem\_decoder.conversion.utils.helpers}, \hyperpage{5}
+    \subitem {get\_float\_value}, \hyperpage{6}
+    \subitem {get\_integer\_value}, \hyperpage{6}
+    \subitem {get\_scale}, \hyperpage{6}
+    \subitem {get\_sign\_correction}, \hyperpage{7}
+    \subitem {get\_timestamp}, \hyperpage{7}
+    \subitem {get\_unit}, \hyperpage{8}
+    \subitem {get\_unit\_type}, \hyperpage{8}
+    \subitem {get\_unix\_timestamp}, \hyperpage{9}
+    \subitem {int32\_to\_ieee}, \hyperpage{9}
+    \subitem {mbus\_protocol\_version}, \hyperpage{9}
+    \subitem {mbus\_serial}, \hyperpage{10}
+    \subitem {mbus\_version}, \hyperpage{10}
+    \subitem {meter\_flag1}, \hyperpage{11}
+    \subitem {meter\_flag1\_str}, \hyperpage{11}
+    \subitem {meter\_flag2}, \hyperpage{11}
+    \subitem {meter\_flag2\_str}, \hyperpage{12}
+    \subitem {meter\_manufacturer}, \hyperpage{12}
+    \subitem {meter\_medium}, \hyperpage{13}
+    \subitem {meter\_medium\_str}, \hyperpage{13}
+    \subitem {meter\_serial}, \hyperpage{14}
+    \subitem {meter\_version}, \hyperpage{14}
+    \subitem {register\_type}, \hyperpage{14}
+    \subitem {register\_type\_str}, \hyperpage{15}
+    \subitem {two\_words\_to\_ieee}, \hyperpage{15}
+    \subitem {two\_words\_to\_long}, \hyperpage{16}
+  \item {mbus\_gem\_decoder.conversion.utils.mbustypes}, \hyperpage{16}
+    \subitem {MEDIUM\_TYPES}, \hyperpage{17}
+    \subitem {MEDIUM\_TYPES\_ARRAY}, \hyperpage{17}
+    \subitem {METER\_TYPES\_ARRAY}, \hyperpage{17}
+    \subitem {READABILITY\_TYPES\_ARRAY}, \hyperpage{17}
+    \subitem {REGISTER\_TYPES\_ARRAY}, \hyperpage{17}
+    \subitem {UNIT\_TYPES}, \hyperpage{17}
+    \subitem {UNIT\_TYPES\_ARRAY}, \hyperpage{17}
+  \item {mbus\_gem\_decoder.conversion.utils.mbustypes.MeterFlag}, 
+		\hyperpage{33}
+    \subitem {READ\_FAILURE}, \hyperpage{34}
+    \subitem {READ\_SUCCESS}, \hyperpage{34}
+    \subitem {VALUES\_UPDATE\_FAILURE}, \hyperpage{34}
+    \subitem {VALUES\_UPDATED\_SUCCESS}, \hyperpage{34}
+  \item {mbus\_gem\_decoder.conversion.utils.mbustypes.ReadabilityTypes}, 
+		\hyperpage{35}
+    \subitem {BOTH}, \hyperpage{35}
+    \subitem {HUMAN\_READABLE}, \hyperpage{36}
+    \subitem {SHORT}, \hyperpage{36}
+  \item {mbus\_gem\_decoder.conversion.utils.mbustypes.RegisterType}, 
+		\hyperpage{36}
+    \subitem {MBUS\_GEM}, \hyperpage{37}
+    \subitem {METER}, \hyperpage{37}
+    \subitem {METER\_ENTRY}, \hyperpage{37}
+  \item {mbus\_gem\_decoder.mbusdecode}, \hyperpage{18}
+  \item {mbus\_gem\_decoder.mbusdecode.MBusDecode}, \hyperpage{18}
+    \subitem {\_\_init\_\_}, \hyperpage{18}
+    \subitem {\_\_str\_\_}, \hyperpage{19}
+    \subitem {conversion}, \hyperpage{20}
+    \subitem {gw\_reg}, \hyperpage{20}
+    \subitem {human}, \hyperpage{20}
+    \subitem {ten\_regs}, \hyperpage{20}
+    \subitem {to\_object}, \hyperpage{19}
+  \item {mbus\_gem\_decoder/\_\_init\_\_.py}, \hyperpage{37, 38}
+  \item {mbus\_gem\_decoder/conversion/\_\_init\_\_.py}, \hyperpage{38}
+  \item {mbus\_gem\_decoder/conversion/mbusmbus.py}, \hyperpage{38, 39}
+  \item {mbus\_gem\_decoder/conversion/mbusmeter.py}, \hyperpage{40}
+  \item {mbus\_gem\_decoder/conversion/mbusmeterentry.py}, 
+		\hyperpage{41, 42}
+  \item {mbus\_gem\_decoder/conversion/utils/\_\_init\_\_.py}, 
+		\hyperpage{38}
+  \item {mbus\_gem\_decoder/conversion/utils/helpers.py}, 
+		\hyperpage{43, 44}
+  \item {mbus\_gem\_decoder/conversion/utils/mbustypes.py}, 
+		\hyperpage{48, 49}
+  \item {mbus\_gem\_decoder/mbusdecode.py}, \hyperpage{51}
+  \item {mbus\_protocol\_version}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{9}
+  \item {mbus\_serial}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{10}
+  \item {mbus\_version}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{10}
+  \item {medium}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeter.MBusMeter}, 
+		\hyperpage{28}
+  \item {MEDIUM\_TYPES}
+    \subitem {mbus\_gem\_decoder.conversion.utils.mbustypes}, 
+		\hyperpage{17}
+  \item {MEDIUM\_TYPES\_ARRAY}
+    \subitem {mbus\_gem\_decoder.conversion.utils.mbustypes}, 
+		\hyperpage{17}
+  \item {METER}
+    \subitem {mbus\_gem\_decoder.conversion.utils.mbustypes.RegisterType}, 
+		\hyperpage{37}
+  \item {METER\_ENTRY}
+    \subitem {mbus\_gem\_decoder.conversion.utils.mbustypes.RegisterType}, 
+		\hyperpage{37}
+  \item {meter\_flag1}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{11}
+  \item {meter\_flag1\_str}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{11}
+  \item {meter\_flag2}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{11}
+  \item {meter\_flag2\_str}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{12}
+  \item {meter\_manufacturer}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{12}
+  \item {meter\_medium}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{13}
+  \item {meter\_medium\_str}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{13}
+  \item {meter\_serial}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{14}
+  \item {METER\_TYPES\_ARRAY}
+    \subitem {mbus\_gem\_decoder.conversion.utils.mbustypes}, 
+		\hyperpage{17}
+  \item {meter\_version}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{14}
+
+  \indexspace
+
+  \item {protocol}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmbus.MBusMBus}, 
+		\hyperpage{23}
+
+  \indexspace
+
+  \item {READ\_FAILURE}
+    \subitem {mbus\_gem\_decoder.conversion.utils.mbustypes.MeterFlag}, 
+		\hyperpage{34}
+  \item {READ\_SUCCESS}
+    \subitem {mbus\_gem\_decoder.conversion.utils.mbustypes.MeterFlag}, 
+		\hyperpage{34}
+  \item {READABILITY\_TYPES\_ARRAY}
+    \subitem {mbus\_gem\_decoder.conversion.utils.mbustypes}, 
+		\hyperpage{17}
+  \item {README.md}, \hyperpage{52}
+  \item {reg}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmbus.MBusMBus}, 
+		\hyperpage{23}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeter.MBusMeter}, 
+		\hyperpage{28}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeterentry.MBusMeterEntry}, 
+		\hyperpage{32}
+  \item {register\_type}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmbus.MBusMBus}, 
+		\hyperpage{24}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeter.MBusMeter}, 
+		\hyperpage{28}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeterentry.MBusMeterEntry}, 
+		\hyperpage{32}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{14}
+  \item {register\_type\_str}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{15}
+  \item {REGISTER\_TYPES\_ARRAY}
+    \subitem {mbus\_gem\_decoder.conversion.utils.mbustypes}, 
+		\hyperpage{17}
+
+  \indexspace
+
+  \item {scale}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeterentry.MBusMeterEntry}, 
+		\hyperpage{32}
+  \item {serial}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmbus.MBusMBus}, 
+		\hyperpage{24}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeter.MBusMeter}, 
+		\hyperpage{28}
+  \item {SHORT}
+    \subitem {mbus\_gem\_decoder.conversion.utils.mbustypes.ReadabilityTypes}, 
+		\hyperpage{36}
+
+  \indexspace
+
+  \item {ten\_regs}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmbus.MBusMBus}, 
+		\hyperpage{24}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeter.MBusMeter}, 
+		\hyperpage{28}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeterentry.MBusMeterEntry}, 
+		\hyperpage{32}
+    \subitem {mbus\_gem\_decoder.mbusdecode.MBusDecode}, \hyperpage{20}
+  \item {to\_object}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmbus.MBusMBus}, 
+		\hyperpage{23}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeter.MBusMeter}, 
+		\hyperpage{27}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeterentry.MBusMeterEntry}, 
+		\hyperpage{31}
+    \subitem {mbus\_gem\_decoder.mbusdecode.MBusDecode}, \hyperpage{19}
+  \item {two\_words\_to\_ieee}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{15}
+  \item {two\_words\_to\_long}
+    \subitem {mbus\_gem\_decoder.conversion.utils.helpers}, 
+		\hyperpage{16}
+
+  \indexspace
+
+  \item {unit}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeterentry.MBusMeterEntry}, 
+		\hyperpage{32}
+  \item {UNIT\_TYPES}
+    \subitem {mbus\_gem\_decoder.conversion.utils.mbustypes}, 
+		\hyperpage{17}
+  \item {UNIT\_TYPES\_ARRAY}
+    \subitem {mbus\_gem\_decoder.conversion.utils.mbustypes}, 
+		\hyperpage{17}
+  \item {unix\_timestamp}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmbus.MBusMBus}, 
+		\hyperpage{24}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeter.MBusMeter}, 
+		\hyperpage{28}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeterentry.MBusMeterEntry}, 
+		\hyperpage{32}
+
+  \indexspace
+
+  \item {VALUES\_UPDATE\_FAILURE}
+    \subitem {mbus\_gem\_decoder.conversion.utils.mbustypes.MeterFlag}, 
+		\hyperpage{34}
+  \item {VALUES\_UPDATED\_SUCCESS}
+    \subitem {mbus\_gem\_decoder.conversion.utils.mbustypes.MeterFlag}, 
+		\hyperpage{34}
+  \item {version}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmbus.MBusMBus}, 
+		\hyperpage{24}
+    \subitem {mbus\_gem\_decoder.conversion.mbusmeter.MBusMeter}, 
+		\hyperpage{28}
+
+\end{theindex}

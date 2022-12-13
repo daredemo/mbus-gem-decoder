@@ -1,0 +1,100 @@
+\hypertarget{mbusmeterentry_8py_source}{}\doxysubsection{mbusmeterentry.\+py}
+\label{mbusmeterentry_8py_source}\index{mbus\_gem\_decoder/conversion/mbusmeterentry.py@{mbus\_gem\_decoder/conversion/mbusmeterentry.py}}
+\mbox{\hyperlink{mbusmeterentry_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00001}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1mbusmeterentry}{00001}} \textcolor{stringliteral}{"{}"{}"{}Convert raw data to METER ENTRY type}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00002}00002 \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00004}00004 \_\_version\_\_ = \textcolor{stringliteral}{"{}0.1.0"{}}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00005}00005 \_\_author\_\_ = \textcolor{stringliteral}{"{}René"{}}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00007}00007 \textcolor{keyword}{import} json}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00008}00008 \textcolor{keyword}{from} . \textcolor{keyword}{import} READABILITY\_TYPES\_ARRAY}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00009}00009 \textcolor{keyword}{from} . \textcolor{keyword}{import} get\_integer\_value, get\_float\_value, get\_scale, get\_unit}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00010}00010 \textcolor{keyword}{from} . \textcolor{keyword}{import} register\_type, register\_type\_str, get\_unit\_type}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00011}00011 \textcolor{keyword}{from} . \textcolor{keyword}{import} get\_unix\_timestamp, get\_timestamp}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00014}00014 \textcolor{keyword}{class }\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry}{MBusMeterEntry}}:}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00015}00015     \textcolor{stringliteral}{"{}"{}"{}MBUS-\/GEM METER ENTRY class}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00016}\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry}{00016}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00017}00017 \textcolor{stringliteral}{    }\textcolor{keyword}{def }\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_a9beb08ebba86f0e924c2f72a4bdcd624}{\_\_init\_\_}}(}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00018}00018                  self,}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00019}00019                  ten\_regs: list[int],}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00020}00020                  gw\_reg: int,}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00021}00021                  human: int = 0) -\/> \textcolor{keywordtype}{None}:}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00022}00022         \textcolor{stringliteral}{"{}"{}"{}Constructor}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00023}00023 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00024}00024 \textcolor{stringliteral}{        Args:}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00025}\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_a9beb08ebba86f0e924c2f72a4bdcd624}{00025}} \textcolor{stringliteral}{            ten\_regs (list[int]): Ten register values }\textcolor{keyword}{as} list of integers.}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00026}00026             gw\_reg (int): Register \textcolor{keyword}{as} declared \textcolor{keywordflow}{in} the MBUS-\/GEM gateway.}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00027}00027             human (int, optional): Generate human readable values: 0 -\/-\/ ignore,}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00028}00028             1 -\/-\/ only human readable values, 2 -\/-\/ both. Defaults to 0.}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00029}00029         \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00030}00030 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00031}00031 \textcolor{stringliteral}{        }\textcolor{keywordflow}{if} gw\_reg < 0:}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00032}00032             \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Gateway register cannot be negative"{}})}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00033}00033         \textcolor{keywordflow}{if} len(ten\_regs) != 10:}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00034}00034             \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Must provide exactly ten register values"{}})}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00035}00035         \textcolor{comment}{\# if human not in [0, 1, 2]:}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00036}00036         \textcolor{keywordflow}{if} human \textcolor{keywordflow}{not} \textcolor{keywordflow}{in} READABILITY\_TYPES\_ARRAY:}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00037}00037             \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Illegal value for human readability"{}})}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00038}\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_abaddbd5054ac4410b2677357208d49d7}{00038}}         self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_abaddbd5054ac4410b2677357208d49d7}{ten\_regs}} = ten\_regs}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00039}\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_a8c37028b60ca238e830e8782f9f4af13}{00039}}         self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_a8c37028b60ca238e830e8782f9f4af13}{gw\_reg}} = gw\_reg}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00040}\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_af3cc1a0905e3329c39cb59e162872a18}{00040}}         self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_af3cc1a0905e3329c39cb59e162872a18}{human}} = human}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00041}00041         self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_a7bb15bdb423a07964d5b89a473b8c320}{convert\_data\_in\_regsmeter\_entry}}()}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00043}00043     \textcolor{keyword}{def }\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_a7bb15bdb423a07964d5b89a473b8c320}{convert\_data\_in\_regsmeter\_entry}}(self) -\/> object:}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00044}00044         \textcolor{stringliteral}{"{}"{}"{}Convert registers that hold data about a METER ENTRY.}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00045}00045 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00046}00046 \textcolor{stringliteral}{        Get data/info about specific value of meter.}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00047}00047 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00048}00048 \textcolor{stringliteral}{        Returns:}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00049}00049 \textcolor{stringliteral}{            object: Object of human-\/readable data}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00050}00050 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00051}00051 \textcolor{stringliteral}{        |REG| VALUE          |SIZE  | DETAILS                                 |}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00052}00052 \textcolor{stringliteral}{        |:-\/-\/|:-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/:|:-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00053}00053 \textcolor{stringliteral}{        |0-\/3| Meter value    | 64bit| Signed integer (}\textcolor{keywordflow}{not} scaled)             |}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00054}00054         |4-\/5| Meter value    | 32bit| Floating point value (scaled)           |}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00055}00055         |6  | Scale factor   | 16bit| Signed scale factor (power of 10)       |}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00056}00056         |7  | Type/Unit      | 16bit| Type field set \textcolor{keywordflow}{in} the upper byte; Unit  |}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00057}00057         |   |                |      | \textcolor{keywordflow}{in} the lower byte                       |}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00058}00058         |8-\/9| Time stamp     | 32bit| Unix time stamp                         |}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00059}\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_a7bb15bdb423a07964d5b89a473b8c320}{00059}}         \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00060}00060 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00061}\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_a1ccf51e5b16a00141b8ec878cacad5dc}{00061}} \textcolor{stringliteral}{        self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_a1ccf51e5b16a00141b8ec878cacad5dc}{reg}} = self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_a8c37028b60ca238e830e8782f9f4af13}{gw\_reg}}}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00062}\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_abc31945e351cca66b330ca0ea3d956fc}{00062}} \textcolor{stringliteral}{        self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_abc31945e351cca66b330ca0ea3d956fc}{integer}} = get\_integer\_value(self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_abaddbd5054ac4410b2677357208d49d7}{ten\_regs}})}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00063}\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_a3115b4c134658b714ad8e2b3d07a48a2}{00063}} \textcolor{stringliteral}{        self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_a3115b4c134658b714ad8e2b3d07a48a2}{scale}} = get\_scale(self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_abaddbd5054ac4410b2677357208d49d7}{ten\_regs}})}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00064}\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_a4e15cb69afdb49bc8cdd19fff0c93349}{00064}} \textcolor{stringliteral}{        self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_a4e15cb69afdb49bc8cdd19fff0c93349}{float}} = get\_float\_value(self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_abaddbd5054ac4410b2677357208d49d7}{ten\_regs}})}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00065}\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_adceaf85104644f6a14e11be5b2323124}{00065}} \textcolor{stringliteral}{        self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_adceaf85104644f6a14e11be5b2323124}{unit}} = get\_unit(self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_abaddbd5054ac4410b2677357208d49d7}{ten\_regs}})}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00066}\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_ae52b3d1c6a1400540f6ba53990e2331b}{00066}} \textcolor{stringliteral}{        self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_ae52b3d1c6a1400540f6ba53990e2331b}{unix\_timestamp}} = get\_unix\_timestamp(self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_abaddbd5054ac4410b2677357208d49d7}{ten\_regs}})}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00067}\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_ace96e05831ec7995212e1383cc7e84d9}{00067}} \textcolor{stringliteral}{        self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_ace96e05831ec7995212e1383cc7e84d9}{register\_type}} = \mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_ace96e05831ec7995212e1383cc7e84d9}{register\_type}}(self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_abaddbd5054ac4410b2677357208d49d7}{ten\_regs}})}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00068}00068 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00069}00069 \textcolor{stringliteral}{    }\textcolor{keyword}{def }\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_acdb26f9127406bc18f08b3b8e9fa11ac}{to\_object}}(self) -\/> object:}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00070}00070         \textcolor{stringliteral}{"{}"{}"{}Convert to object}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00071}00071 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00072}00072 \textcolor{stringliteral}{        Returns:}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00073}00073 \textcolor{stringliteral}{            object: data }\textcolor{keyword}{as} object}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00074}\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_acdb26f9127406bc18f08b3b8e9fa11ac}{00074}}         \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00075}00075 \textcolor{stringliteral}{        data = \{\}}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00076}00076 \textcolor{stringliteral}{        data["{}reg"{}}] = self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_a1ccf51e5b16a00141b8ec878cacad5dc}{reg}}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00077}00077         data[\textcolor{stringliteral}{"{}integer"{}}] = self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_abc31945e351cca66b330ca0ea3d956fc}{integer}}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00078}00078         data[\textcolor{stringliteral}{"{}scale"{}}] = self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_a3115b4c134658b714ad8e2b3d07a48a2}{scale}}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00079}00079         data[\textcolor{stringliteral}{"{}float"{}}] = self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_a4e15cb69afdb49bc8cdd19fff0c93349}{float}}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00080}00080         \textcolor{keywordflow}{if} self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_af3cc1a0905e3329c39cb59e162872a18}{human}} \textcolor{keywordflow}{in} [0, 2]:}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00081}00081             data[\textcolor{stringliteral}{"{}unit"{}}] = self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_adceaf85104644f6a14e11be5b2323124}{unit}}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00082}00082             data[\textcolor{stringliteral}{"{}timestampUnix"{}}] = self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_ae52b3d1c6a1400540f6ba53990e2331b}{unix\_timestamp}}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00083}00083             data[\textcolor{stringliteral}{"{}type"{}}] = self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_ace96e05831ec7995212e1383cc7e84d9}{register\_type}}}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00084}00084         \textcolor{keywordflow}{if} self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_af3cc1a0905e3329c39cb59e162872a18}{human}} \textcolor{keywordflow}{in} [1, 2]:}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00085}00085             unit\_readable = get\_unit\_type(self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_adceaf85104644f6a14e11be5b2323124}{unit}})}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00086}00086             data[\textcolor{stringliteral}{"{}unit\_string"{}}] = unit\_readable[\textcolor{stringliteral}{"{}name"{}}]}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00087}00087             data[\textcolor{stringliteral}{"{}unit\_description"{}}] = unit\_readable[\textcolor{stringliteral}{"{}desc"{}}]}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00088}00088             data[\textcolor{stringliteral}{"{}timestamp"{}}] = get\_timestamp(self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_abaddbd5054ac4410b2677357208d49d7}{ten\_regs}})}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00089}00089             data[\textcolor{stringliteral}{"{}type\_string"{}}] = register\_type\_str(self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_abaddbd5054ac4410b2677357208d49d7}{ten\_regs}})}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00090}00090         \textcolor{keywordflow}{return} data}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00092}\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_a62c9c6b6f1c7f0087bc5868c95642901}{00092}}     \textcolor{keyword}{def }\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_a62c9c6b6f1c7f0087bc5868c95642901}{\_\_str\_\_}}(self):}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00093}00093         data = self.\mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1mbusmeterentry_1_1MBusMeterEntry_acdb26f9127406bc18f08b3b8e9fa11ac}{to\_object}}()}
+\DoxyCodeLine{\Hypertarget{mbusmeterentry_8py_source_l00094}00094         \textcolor{keywordflow}{return} json.dumps(data)}
+
+\end{DoxyCode}

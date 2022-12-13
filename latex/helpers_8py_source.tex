@@ -1,0 +1,388 @@
+\hypertarget{helpers_8py_source}{}\doxysubsection{helpers.\+py}
+\label{helpers_8py_source}\index{mbus\_gem\_decoder/conversion/utils/helpers.py@{mbus\_gem\_decoder/conversion/utils/helpers.py}}
+\mbox{\hyperlink{helpers_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00001}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers}{00001}} \textcolor{stringliteral}{"{}"{}"{}Helper methods}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00002}00002 \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00004}00004 \_\_version\_\_ = \textcolor{stringliteral}{"{}0.1.0"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00005}00005 \_\_author\_\_ = \textcolor{stringliteral}{"{}René"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00008}00008 \textcolor{keyword}{import} struct}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00009}00009 \textcolor{keyword}{from} datetime \textcolor{keyword}{import} datetime}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00011}00011 \textcolor{keyword}{from} .mbustypes \textcolor{keyword}{import} MEDIUM\_TYPES\_ARRAY, MEDIUM\_TYPES}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00012}00012 \textcolor{keyword}{from} .mbustypes \textcolor{keyword}{import} UNIT\_TYPES\_ARRAY, UNIT\_TYPES}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00013}00013 \textcolor{keyword}{from} .mbustypes \textcolor{keyword}{import} REGISTER\_TYPES\_ARRAY, RegisterType}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00014}00014 \textcolor{keyword}{from} .mbustypes \textcolor{keyword}{import} MeterFlag}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00017}00017 \textcolor{keyword}{def }meter\_serial(ten\_regs: list[int]) -\/> str:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00018}00018     \textcolor{stringliteral}{"{}"{}"{}Convert METER's serial number}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00019}00019 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00020}00020 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00021}00021 \textcolor{stringliteral}{        ten\_regs (list[int]): registers}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00022}00022 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00023}00023 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00024}00024 \textcolor{stringliteral}{        str: serial number}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00025}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ad1f249d08ea961c4556788cf69a07905}{00025}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00026}00026 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00027}00027 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} f\textcolor{stringliteral}{"{}\{((ten\_regs[0] << 16) + ten\_regs[1]):08d\}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00030}00030 \textcolor{keyword}{def }meter\_manufacturer(ten\_regs: list[int]) -\/> str:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00031}00031     \textcolor{stringliteral}{"{}"{}"{}Convert a numeric manufacturer code to string/letters.}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00032}00032 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00033}00033 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00034}00034 \textcolor{stringliteral}{        ten\_regs (list[int]): registers}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00035}00035 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00036}00036 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00037}00037 \textcolor{stringliteral}{        str: Three letter code of manufacturer}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00038}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a70588cf7218bb3d5ba313f61a52c1ce9}{00038}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00039}00039 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00040}00040 \textcolor{stringliteral}{    reg = ten\_regs[2]}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00041}00041 \textcolor{stringliteral}{    id\_1 = chr(ord("{}A"{}}) + ((reg >> 10) \& 0x1F) -\/ 1)}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00042}00042     id\_2 = chr(ord(\textcolor{stringliteral}{"{}A"{}}) + ((reg >> 5) \& 0x1F) -\/ 1)}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00043}00043     id\_3 = chr(ord(\textcolor{stringliteral}{"{}A"{}}) + (reg \& 0x1F) -\/ 1)}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00044}00044     \textcolor{keywordflow}{return} f\textcolor{stringliteral}{"{}\{id\_1\}\{id\_2\}\{id\_3\}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00047}00047 \textcolor{keyword}{def }meter\_version(ten\_regs: list[int]) -\/> int:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00048}00048     \textcolor{stringliteral}{"{}"{}"{}Convert METER's version to integer value}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00049}00049 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00050}00050 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00051}00051 \textcolor{stringliteral}{        ten\_regs (list[int]): registers}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00052}00052 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00053}00053 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00054}00054 \textcolor{stringliteral}{        int: version number}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00055}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a791e1a894f7c05a51a54bc45d92ab03b}{00055}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00056}00056 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00057}00057 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} ten\_regs[3] >> 8}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00060}00060 \textcolor{keyword}{def }meter\_medium(ten\_regs: list[int]) -\/> int:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00061}00061     \textcolor{stringliteral}{"{}"{}"{}METER's medium}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00062}00062 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00063}00063 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00064}00064 \textcolor{stringliteral}{        ten\_regs (list[int]): registers}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00065}00065 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00066}00066 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00067}00067 \textcolor{stringliteral}{        int: medium}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00068}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a4daee1716ece8f99df0ba21c0661d6f7}{00068}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00069}00069 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00070}00070 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} ten\_regs[3] \& 0xFF}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00073}00073 \textcolor{keyword}{def }meter\_medium\_str(value: int = -\/1) -\/> str:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00074}00074     \textcolor{stringliteral}{"{}"{}"{}Convert numeric medium type to string.}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00075}00075 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00076}00076 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00077}00077 \textcolor{stringliteral}{        value (int): Numeric medium type. Defaults to -\/1.}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00078}00078 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00079}00079 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00080}00080 \textcolor{stringliteral}{        str: Medium type }\textcolor{keyword}{as} a string}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00081}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a2acdf445015cfafb5e0ef67fb88763f4}{00081}}     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00082}00082 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00083}00083 \textcolor{stringliteral}{    }\textcolor{keywordflow}{if} value \textcolor{keywordflow}{in} MEDIUM\_TYPES\_ARRAY:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00084}00084         \textcolor{keywordflow}{return} list(}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00085}00085             filter(}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00086}00086                 \textcolor{keyword}{lambda} x: x[\textcolor{stringliteral}{"{}num"{}}] == value,}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00087}00087                 MEDIUM\_TYPES))[0][\textcolor{stringliteral}{"{}name"{}}]}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00088}00088     \textcolor{keywordflow}{if} value < 0 \textcolor{keywordflow}{or} value > 255:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00089}00089         \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Medium index is out of range"{}})}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00090}00090     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Reserved"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00093}00093 \textcolor{keyword}{def }meter\_flag1(ten\_regs: list[int]) -\/> int:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00094}00094     \textcolor{stringliteral}{"{}"{}"{}Get METER's flag1 as integer}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00095}00095 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00096}00096 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00097}00097 \textcolor{stringliteral}{        ten\_regs (list[int]): registers}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00098}00098 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00099}00099 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00100}00100 \textcolor{stringliteral}{        int: flag1}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00101}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a8885a07dc4c3664c2fe8dbac84cf563d}{00101}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00102}00102 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00103}00103 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} ten\_regs[8] \& 0x01}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00106}00106 \textcolor{keyword}{def }meter\_flag1\_str(ten\_regs: list[int]) -\/> str:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00107}00107     \textcolor{stringliteral}{"{}"{}"{}Get METER's flag1 as string}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00108}00108 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00109}00109 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00110}00110 \textcolor{stringliteral}{        ten\_regs (list[int]): registers}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00111}00111 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00112}00112 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00113}00113 \textcolor{stringliteral}{        str: flag1}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00114}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a607cd8aa322d949117f69db956aa6de3}{00114}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00115}00115 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00116}00116 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} \mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1utils_1_1mbustypes_1_1MeterFlag}{MeterFlag}}(ten\_regs[8] \& 0x01).name}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00119}00119 \textcolor{keyword}{def }meter\_flag2(ten\_regs: list[int]) -\/> int:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00120}00120     \textcolor{stringliteral}{"{}"{}"{}Get METER's flag2 as integer}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00121}00121 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00122}00122 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00123}00123 \textcolor{stringliteral}{        ten\_regs (list[int]): registers}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00124}00124 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00125}00125 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00126}00126 \textcolor{stringliteral}{        int: flag2}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00127}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a3d8be981f7b73ebda3e50bb3fcafe589}{00127}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00128}00128 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00129}00129 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} ((ten\_regs[8] >> 1) \& 0x01) + 2}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00130}00130 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00132}00132 \textcolor{keyword}{def }meter\_flag2\_str(ten\_regs: list[int]) -\/> str:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00133}00133     \textcolor{stringliteral}{"{}"{}"{}Get METER's flag2 as string}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00134}00134 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00135}00135 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00136}00136 \textcolor{stringliteral}{        ten\_regs (list[int]): registers}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00137}00137 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00138}00138 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00139}00139 \textcolor{stringliteral}{        str: flag2}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00140}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ae64558a62cff28c7604fffb60c4309b6}{00140}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00141}00141 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00142}00142 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} \mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1utils_1_1mbustypes_1_1MeterFlag}{MeterFlag}}(((ten\_regs[8] >> 1) \& 0x01) + 2).name}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00143}00143 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00145}00145 \textcolor{keyword}{def }register\_type(ten\_regs: list[int]) -\/> int:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00146}00146     \textcolor{stringliteral}{"{}"{}"{}METER's type as integer}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00147}00147 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00148}00148 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00149}00149 \textcolor{stringliteral}{        ten\_regs (list[int]): registers}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00150}00150 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00151}00151 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00152}00152 \textcolor{stringliteral}{        int: type}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00153}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_af8ebb76698d1822d696ee257ca7634e0}{00153}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00154}00154 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00155}00155 \textcolor{stringliteral}{    register\_type\_value = abs(ten\_regs[7] >> 8)}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00156}00156 \textcolor{stringliteral}{    }\textcolor{keywordflow}{if} register\_type\_value \textcolor{keywordflow}{not} \textcolor{keywordflow}{in} REGISTER\_TYPES\_ARRAY:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00157}00157         \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Register type value out of range"{}})}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00158}00158     \textcolor{keywordflow}{return} register\_type\_value}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00159}00159 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00160}00160 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00161}00161 \textcolor{keyword}{def }register\_type\_str(ten\_regs: list[int]) -\/> str:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00162}00162     \textcolor{stringliteral}{"{}"{}"{}METER's type as string}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00163}00163 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00164}00164 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00165}00165 \textcolor{stringliteral}{        ten\_regs (list[int]): registers}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00166}00166 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00167}00167 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00168}00168 \textcolor{stringliteral}{        str: type}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00169}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_aef25123a071999681167f279630422cc}{00169}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00170}00170 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00171}00171 \textcolor{stringliteral}{    register\_type\_value = abs(ten\_regs[7] >> 8)}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00172}00172 \textcolor{stringliteral}{    }\textcolor{keywordflow}{if} register\_type\_value \textcolor{keywordflow}{not} \textcolor{keywordflow}{in} REGISTER\_TYPES\_ARRAY:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00173}00173         \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Register type value out of range"{}})}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00174}00174     \textcolor{keywordflow}{return} \mbox{\hyperlink{classmbus__gem__decoder_1_1conversion_1_1utils_1_1mbustypes_1_1RegisterType}{RegisterType}}(register\_type\_value).name}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00175}00175 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00176}00176 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00177}00177 \textcolor{keyword}{def }\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a2bd776577472173071c8c1c7589d5448}{get\_sign\_correction}}(ten\_regs: list[int]) -\/> int:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00178}00178     \textcolor{stringliteral}{"{}"{}"{}Get sign correction value}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00179}00179 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00180}00180 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00181}00181 \textcolor{stringliteral}{        ten\_regs (list[int]): registers}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00182}00182 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00183}00183 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00184}00184 \textcolor{stringliteral}{        int: sign correction  (1 }\textcolor{keywordflow}{or} -\/1)}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00185}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a2bd776577472173071c8c1c7589d5448}{00185}}     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00186}00186 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00187}00187 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} -\/1 \textcolor{keywordflow}{if} (ten\_regs[0] >> 15) \& 0x01 \textcolor{keywordflow}{else} 1}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00188}00188 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00189}00189 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00190}00190 \textcolor{keyword}{def }get\_integer\_value(ten\_regs: list[int]) -\/> int:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00191}00191     \textcolor{stringliteral}{"{}"{}"{}Get integer value of the reading.}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00192}00192 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00193}00193 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00194}00194 \textcolor{stringliteral}{        ten\_regs (list[int]): List of four (4) 16-\/bit integer values}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00195}00195 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00196}00196 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00197}00197 \textcolor{stringliteral}{        int: 64-\/bit integer value}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00198}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ae33b7aafee7d8f5e208924edee09d855}{00198}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00199}00199 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00200}00200 \textcolor{stringliteral}{    sign\_correction = \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a2bd776577472173071c8c1c7589d5448}{get\_sign\_correction}}(ten\_regs)}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00201}00201 \textcolor{stringliteral}{    raw\_value = (ten\_regs[0] \& 0x3FFF) << 16}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00202}00202 \textcolor{stringliteral}{    raw\_value = (raw\_value + ten\_regs[1]) << 16}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00203}00203 \textcolor{stringliteral}{    raw\_value = (raw\_value + ten\_regs[2]) << 16}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00204}00204 \textcolor{stringliteral}{    raw\_value = raw\_value + ten\_regs[3]}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00205}00205 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} abs(sign\_correction * raw\_value) * sign\_correction}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00206}00206 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00207}00207 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00208}00208 \textcolor{keyword}{def }get\_scale(ten\_regs: list[int]) -\/> int:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00209}00209     \textcolor{stringliteral}{"{}"{}"{}Scaling factor}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00210}00210 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00211}00211 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00212}00212 \textcolor{stringliteral}{        ten\_regs (list[int]): registers}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00213}00213 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00214}00214 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00215}00215 \textcolor{stringliteral}{        int: scaling factor}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00216}00216 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00217}00217 \textcolor{stringliteral}{    \(\backslash\)f[float \(\backslash\)approx integer\(\backslash\)times 10\string^\{scale\}\(\backslash\)f]}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00218}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a19ec51775c12d607c89b50f0526279d4}{00218}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00219}00219 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00220}00220 \textcolor{stringliteral}{    correction = -\/1 }\textcolor{keywordflow}{if} (ten\_regs[6] >> 15) \& 0x01 \textcolor{keywordflow}{else} 1}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00221}00221     \textcolor{keywordflow}{return} abs((correction * ten\_regs[6]) \& 0x7FFF) * correction}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00222}00222 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00223}00223 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00224}00224 \textcolor{keyword}{def }get\_float\_value(ten\_regs: list[int]) -\/> float:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00225}00225     \textcolor{stringliteral}{"{}"{}"{}Get floating point value}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00226}00226 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00227}00227 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00228}00228 \textcolor{stringliteral}{        ten\_regs (list[int]): registers}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00229}00229 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00230}00230 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00231}00231 \textcolor{stringliteral}{        float: approximate floating point value}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00232}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_aa78f1fd11720d3931fe1844c7573065f}{00232}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00233}00233 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00234}00234 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_afe5c1f76aefd4841ef1db0b74b770de3}{two\_words\_to\_ieee}}(ten\_regs[4], ten\_regs[5])}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00235}00235 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00236}00236 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00237}00237 \textcolor{keyword}{def }\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ace69ec4b5a85c90457a66ba620671c4b}{int32\_to\_ieee}}(val\_int: int) -\/> float:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00238}00238     \textcolor{stringliteral}{"{}"{}"{}Convert Python int32 to IEEE float.}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00239}00239 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00240}00240 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00241}00241 \textcolor{stringliteral}{        val\_int (int): Value to convert to float}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00242}00242 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00243}00243 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00244}00244 \textcolor{stringliteral}{        float: Converted value }\textcolor{keyword}{as} an IEEE floating point}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00245}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ace69ec4b5a85c90457a66ba620671c4b}{00245}}     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00246}00246 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00247}00247 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} struct.unpack(\textcolor{stringliteral}{"{}f"{}}, struct.pack(\textcolor{stringliteral}{"{}I"{}}, val\_int))[0]}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00248}00248 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00249}00249 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00250}00250 \textcolor{keyword}{def }\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_afe5c1f76aefd4841ef1db0b74b770de3}{two\_words\_to\_ieee}}(val\_one: int, val\_two: int) -\/> float:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00251}00251     \textcolor{stringliteral}{"{}"{}"{}Convert two words (16 bit) to IEEE float (32 bit).}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00252}00252 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00253}00253 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00254}00254 \textcolor{stringliteral}{        val\_one (int): The first value (16 bit)}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00255}00255 \textcolor{stringliteral}{        val\_two (int): The second value (16 bit)}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00256}00256 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00257}00257 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00258}00258 \textcolor{stringliteral}{        float: Combined IEEE float (32 bit)}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00259}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_afe5c1f76aefd4841ef1db0b74b770de3}{00259}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00260}00260 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00261}00261 \textcolor{stringliteral}{    val\_int32 = \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a404960418e918e1fa24378f43869a148}{two\_words\_to\_long}}(val\_one, val\_two)}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00262}00262 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ace69ec4b5a85c90457a66ba620671c4b}{int32\_to\_ieee}}(val\_int32)}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00263}00263 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00264}00264 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00265}00265 \textcolor{keyword}{def }\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a404960418e918e1fa24378f43869a148}{two\_words\_to\_long}}(val\_one: int, val\_two: int) -\/> int:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00266}00266     \textcolor{stringliteral}{"{}"{}"{}Convert two words (16 bit) to long (32 bit).}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00267}00267 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00268}00268 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00269}00269 \textcolor{stringliteral}{        val\_one (int): The first value (16 bit)}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00270}00270 \textcolor{stringliteral}{        val\_two (int): The second value (16 bit)}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00271}00271 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00272}00272 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00273}00273 \textcolor{stringliteral}{        int: Combined long (32 bit)}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00274}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a404960418e918e1fa24378f43869a148}{00274}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00275}00275 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00276}00276 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} (val\_one << 16) + val\_two}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00277}00277 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00278}00278 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00279}00279 \textcolor{keyword}{def }get\_unit(ten\_regs: list[int]) -\/> int:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00280}00280     \textcolor{stringliteral}{"{}"{}"{}Unit of measure}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00281}00281 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00282}00282 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00283}00283 \textcolor{stringliteral}{        ten\_regs (list[int]): registers}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00284}00284 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00285}00285 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00286}00286 \textcolor{stringliteral}{        int: Unit of measure}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00287}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ac87df068271d83dd502fb4aee7bd5be3}{00287}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00288}00288 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00289}00289 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} ten\_regs[7] \& 0xFF}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00290}00290 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00291}00291 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00292}00292 \textcolor{keyword}{def }get\_unit\_type(value: int) -\/> dict[str, str]:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00293}00293     \textcolor{stringliteral}{"{}"{}"{}Convert numeric unit type to string.}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00294}00294 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00295}00295 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00296}00296 \textcolor{stringliteral}{        value (int): Numeric unit type}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00297}00297 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00298}00298 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00299}00299 \textcolor{stringliteral}{        dict[str, str]: Unit type }\textcolor{keyword}{as} a dictionary of strings}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00300}00300         (name (short form), desc (description \textcolor{keywordflow}{or} full form of the unit))}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00301}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a488d5ce8a8c7e6d4873b88b1b480407f}{00301}}     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00302}00302 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00303}00303 \textcolor{stringliteral}{    }\textcolor{keywordflow}{if} value \textcolor{keywordflow}{in} UNIT\_TYPES\_ARRAY:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00304}00304         unit\_match = list(}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00305}00305             filter(}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00306}00306                 \textcolor{keyword}{lambda} x: x[\textcolor{stringliteral}{"{}num"{}}] == value, UNIT\_TYPES))}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00307}00307         \textcolor{keywordflow}{return} list(}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00308}00308             map(}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00309}00309                 \textcolor{keyword}{lambda} x:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00310}00310                 \{}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00311}00311                     \textcolor{stringliteral}{"{}name"{}}: x[\textcolor{stringliteral}{"{}name"{}}],}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00312}00312                     \textcolor{stringliteral}{"{}desc"{}}: x[\textcolor{stringliteral}{"{}desc"{}}]}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00313}00313                 \}, unit\_match))[0]}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00314}00314     \textcolor{keywordflow}{if} value < 0 \textcolor{keywordflow}{or} value > 255:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00315}00315         \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Unit value out of range"{}})}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00316}00316     \textcolor{keywordflow}{return} \{\textcolor{stringliteral}{"{}name"{}}: \textcolor{stringliteral}{"{}Res"{}}, \textcolor{stringliteral}{"{}desc"{}}: \textcolor{stringliteral}{"{}Reserved"{}}\}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00317}00317 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00318}00318 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00319}00319 \textcolor{keyword}{def }mbus\_serial(ten\_regs: list[int]) -\/> str:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00320}00320     \textcolor{stringliteral}{"{}"{}"{}Get serial number of MBUS-\/GEM gateway}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00321}00321 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00322}00322 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00323}00323 \textcolor{stringliteral}{        ten\_regs (list[int]): registesr}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00324}00324 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00325}00325 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00326}00326 \textcolor{stringliteral}{        str: serial number}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00327}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ab9ec9fca3b4eb7009ca23e1c3dee54ab}{00327}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00328}00328 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00329}00329 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} f\textcolor{stringliteral}{"{}\{ten\_regs[0]:04X\}\{ten\_regs[1]:04X\}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00330}00330 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00331}00331 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00332}00332 \textcolor{keyword}{def }mbus\_protocol\_version(ten\_regs: list[int]) -\/> int:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00333}00333     \textcolor{stringliteral}{"{}"{}"{}Protocol version}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00334}00334 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00335}00335 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00336}00336 \textcolor{stringliteral}{        ten\_regs (list[int]): registers}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00337}00337 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00338}00338 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00339}00339 \textcolor{stringliteral}{        int: Protocol version}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00340}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a82d01d467e168ed3cb997e22700197ab}{00340}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00341}00341 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00342}00342 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} ten\_regs[2]}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00343}00343 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00344}00344 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00345}00345 \textcolor{keyword}{def }mbus\_version(ten\_regs: list[int]) -\/> str:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00346}00346     \textcolor{stringliteral}{"{}"{}"{}Protocol version}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00347}00347 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00348}00348 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00349}00349 \textcolor{stringliteral}{        ten\_regs (list[int]): registers}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00350}00350 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00351}00351 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00352}00352 \textcolor{stringliteral}{        str: Protocol version}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00353}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_afa7c9d1514c6a0478904e6cac9c3dfb5}{00353}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00354}00354 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00355}00355 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} f\textcolor{stringliteral}{"{}\{ten\_regs[3]//100\}.\{ten\_regs[3]\%100\}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00356}00356 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00357}00357 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00358}00358 \textcolor{keyword}{def }get\_unix\_timestamp(ten\_regs: list[int]) -\/> int:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00359}00359     \textcolor{stringliteral}{"{}"{}"{}UNIX timestamp}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00360}00360 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00361}00361 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00362}00362 \textcolor{stringliteral}{        ten\_regs (list[int]): registers}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00363}00363 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00364}00364 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00365}00365 \textcolor{stringliteral}{        int: UNIX timestamp}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00366}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a9163c6c73f67c6f13b55d1548b8c7e54}{00366}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00367}00367 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00368}00368 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} (ten\_regs[4] << 16) + ten\_regs[5]}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00369}00369 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00370}00370 }
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00371}00371 \textcolor{keyword}{def }get\_timestamp(ten\_regs: list[int]) -\/> str:}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00372}00372     \textcolor{stringliteral}{"{}"{}"{}Timestamp}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00373}00373 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00374}00374 \textcolor{stringliteral}{    Args:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00375}00375 \textcolor{stringliteral}{        ten\_regs (list[int]): registers}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00376}00376 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00377}00377 \textcolor{stringliteral}{    Returns:}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00378}00378 \textcolor{stringliteral}{        str: Timestamp}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00379}\mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a78a56e7c7b7eb444097bf071f3c3ae8d}{00379}} \textcolor{stringliteral}{    "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00380}00380 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00381}00381 \textcolor{stringliteral}{    unix\_time = get\_unix\_timestamp(ten\_regs)}}
+\DoxyCodeLine{\Hypertarget{helpers_8py_source_l00382}00382 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} datetime.utcfromtimestamp(unix\_time).strftime(\textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d \%H:\%M:\%S"{}})}
+
+\end{DoxyCode}

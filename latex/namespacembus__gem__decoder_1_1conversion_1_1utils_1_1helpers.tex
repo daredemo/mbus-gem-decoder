@@ -1,0 +1,921 @@
+\hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers}{}\doxysubsection{mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers Namespace Reference}
+\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers}\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ad1f249d08ea961c4556788cf69a07905}{meter\+\_\+serial}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em Convert METER\textquotesingle{}s serial number. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a70588cf7218bb3d5ba313f61a52c1ce9}{meter\+\_\+manufacturer}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em Convert a numeric manufacturer code to string/letters. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a791e1a894f7c05a51a54bc45d92ab03b}{meter\+\_\+version}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em Convert METER\textquotesingle{}s version to integer value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a4daee1716ece8f99df0ba21c0661d6f7}{meter\+\_\+medium}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em METER\textquotesingle{}s medium. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a2acdf445015cfafb5e0ef67fb88763f4}{meter\+\_\+medium\+\_\+str}} (int value=-\/1)
+\begin{DoxyCompactList}\small\item\em Convert numeric medium type to string. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a8885a07dc4c3664c2fe8dbac84cf563d}{meter\+\_\+flag1}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em Get METER\textquotesingle{}s flag1 as integer. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a607cd8aa322d949117f69db956aa6de3}{meter\+\_\+flag1\+\_\+str}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em Get METER\textquotesingle{}s flag1 as string. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a3d8be981f7b73ebda3e50bb3fcafe589}{meter\+\_\+flag2}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em Get METER\textquotesingle{}s flag2 as integer. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ae64558a62cff28c7604fffb60c4309b6}{meter\+\_\+flag2\+\_\+str}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em Get METER\textquotesingle{}s flag2 as string. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_af8ebb76698d1822d696ee257ca7634e0}{register\+\_\+type}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em METER\textquotesingle{}s type as integer. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_aef25123a071999681167f279630422cc}{register\+\_\+type\+\_\+str}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em METER\textquotesingle{}s type as string. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a2bd776577472173071c8c1c7589d5448}{get\+\_\+sign\+\_\+correction}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em Get sign correction value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ae33b7aafee7d8f5e208924edee09d855}{get\+\_\+integer\+\_\+value}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em Get integer value of the reading. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a19ec51775c12d607c89b50f0526279d4}{get\+\_\+scale}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em Scaling factor. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_aa78f1fd11720d3931fe1844c7573065f}{get\+\_\+float\+\_\+value}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em Get floating point value. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ace69ec4b5a85c90457a66ba620671c4b}{int32\+\_\+to\+\_\+ieee}} (int val\+\_\+int)
+\begin{DoxyCompactList}\small\item\em Convert Python int32 to IEEE float. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_afe5c1f76aefd4841ef1db0b74b770de3}{two\+\_\+words\+\_\+to\+\_\+ieee}} (int val\+\_\+one, int val\+\_\+two)
+\begin{DoxyCompactList}\small\item\em Convert two words (16 bit) to IEEE float (32 bit). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a404960418e918e1fa24378f43869a148}{two\+\_\+words\+\_\+to\+\_\+long}} (int val\+\_\+one, int val\+\_\+two)
+\begin{DoxyCompactList}\small\item\em Convert two words (16 bit) to long (32 bit). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ac87df068271d83dd502fb4aee7bd5be3}{get\+\_\+unit}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em Unit of measure. \end{DoxyCompactList}\item 
+dict\mbox{[}str, str\mbox{]} \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a488d5ce8a8c7e6d4873b88b1b480407f}{get\+\_\+unit\+\_\+type}} (int value)
+\begin{DoxyCompactList}\small\item\em Convert numeric unit type to string. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ab9ec9fca3b4eb7009ca23e1c3dee54ab}{mbus\+\_\+serial}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em Get serial number of MBUS-\/\+GEM gateway. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a82d01d467e168ed3cb997e22700197ab}{mbus\+\_\+protocol\+\_\+version}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em Protocol version. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_afa7c9d1514c6a0478904e6cac9c3dfb5}{mbus\+\_\+version}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em Protocol version. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a9163c6c73f67c6f13b55d1548b8c7e54}{get\+\_\+unix\+\_\+timestamp}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em UNIX timestamp. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a78a56e7c7b7eb444097bf071f3c3ae8d}{get\+\_\+timestamp}} (list\mbox{[}int\mbox{]} ten\+\_\+regs)
+\begin{DoxyCompactList}\small\item\em Timestamp. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_aa78f1fd11720d3931fe1844c7573065f}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_aa78f1fd11720d3931fe1844c7573065f}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!get\_float\_value@{get\_float\_value}}
+\index{get\_float\_value@{get\_float\_value}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{get\_float\_value()}{get\_float\_value()}}
+{\footnotesize\ttfamily  float mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+get\+\_\+float\+\_\+value (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+Get floating point value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & registers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+float approximate floating point value 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00232}{232}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00232     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00233 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00234 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} two\_words\_to\_ieee(ten\_regs[4], ten\_regs[5])}
+\DoxyCodeLine{00235 }
+\DoxyCodeLine{00236 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ae33b7aafee7d8f5e208924edee09d855}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ae33b7aafee7d8f5e208924edee09d855}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!get\_integer\_value@{get\_integer\_value}}
+\index{get\_integer\_value@{get\_integer\_value}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{get\_integer\_value()}{get\_integer\_value()}}
+{\footnotesize\ttfamily  int mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+get\+\_\+integer\+\_\+value (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+Get integer value of the reading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & List of four (4) 16-\/bit integer values\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+int 64-\/bit integer value 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00198}{198}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00198     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00199 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00200 \textcolor{stringliteral}{    sign\_correction = get\_sign\_correction(ten\_regs)}}
+\DoxyCodeLine{00201 \textcolor{stringliteral}{    raw\_value = (ten\_regs[0] \& 0x3FFF) << 16}}
+\DoxyCodeLine{00202 \textcolor{stringliteral}{    raw\_value = (raw\_value + ten\_regs[1]) << 16}}
+\DoxyCodeLine{00203 \textcolor{stringliteral}{    raw\_value = (raw\_value + ten\_regs[2]) << 16}}
+\DoxyCodeLine{00204 \textcolor{stringliteral}{    raw\_value = raw\_value + ten\_regs[3]}}
+\DoxyCodeLine{00205 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} abs(sign\_correction * raw\_value) * sign\_correction}
+\DoxyCodeLine{00206 }
+\DoxyCodeLine{00207 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a19ec51775c12d607c89b50f0526279d4}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a19ec51775c12d607c89b50f0526279d4}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!get\_scale@{get\_scale}}
+\index{get\_scale@{get\_scale}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{get\_scale()}{get\_scale()}}
+{\footnotesize\ttfamily  int mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+get\+\_\+scale (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+Scaling factor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & registers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+int scaling factor
+\end{DoxyReturn}
+\[float \approx integer\times 10^{scale}\] 
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00218}{218}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00218     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00219 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00220 \textcolor{stringliteral}{    correction = -\/1 }\textcolor{keywordflow}{if} (ten\_regs[6] >> 15) \& 0x01 \textcolor{keywordflow}{else} 1}
+\DoxyCodeLine{00221     \textcolor{keywordflow}{return} abs((correction * ten\_regs[6]) \& 0x7FFF) * correction}
+\DoxyCodeLine{00222 }
+\DoxyCodeLine{00223 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a2bd776577472173071c8c1c7589d5448}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a2bd776577472173071c8c1c7589d5448}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!get\_sign\_correction@{get\_sign\_correction}}
+\index{get\_sign\_correction@{get\_sign\_correction}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{get\_sign\_correction()}{get\_sign\_correction()}}
+{\footnotesize\ttfamily  int mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+get\+\_\+sign\+\_\+correction (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+Get sign correction value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & registers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+int sign correction (1 or -\/1) 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00185}{185}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00185     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00186 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00187 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} -\/1 \textcolor{keywordflow}{if} (ten\_regs[0] >> 15) \& 0x01 \textcolor{keywordflow}{else} 1}
+\DoxyCodeLine{00188 }
+\DoxyCodeLine{00189 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a78a56e7c7b7eb444097bf071f3c3ae8d}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a78a56e7c7b7eb444097bf071f3c3ae8d}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!get\_timestamp@{get\_timestamp}}
+\index{get\_timestamp@{get\_timestamp}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{get\_timestamp()}{get\_timestamp()}}
+{\footnotesize\ttfamily  str mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+get\+\_\+timestamp (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+Timestamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & registers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+str Timestamp 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00379}{379}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00379     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00380 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00381 \textcolor{stringliteral}{    unix\_time = get\_unix\_timestamp(ten\_regs)}}
+\DoxyCodeLine{00382 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} datetime.utcfromtimestamp(unix\_time).strftime(\textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d \%H:\%M:\%S"{}})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ac87df068271d83dd502fb4aee7bd5be3}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ac87df068271d83dd502fb4aee7bd5be3}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!get\_unit@{get\_unit}}
+\index{get\_unit@{get\_unit}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{get\_unit()}{get\_unit()}}
+{\footnotesize\ttfamily  int mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+get\+\_\+unit (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+Unit of measure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & registers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+int Unit of measure 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00287}{287}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00287     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00288 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00289 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} ten\_regs[7] \& 0xFF}
+\DoxyCodeLine{00290 }
+\DoxyCodeLine{00291 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a488d5ce8a8c7e6d4873b88b1b480407f}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a488d5ce8a8c7e6d4873b88b1b480407f}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!get\_unit\_type@{get\_unit\_type}}
+\index{get\_unit\_type@{get\_unit\_type}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{get\_unit\_type()}{get\_unit\_type()}}
+{\footnotesize\ttfamily  dict\mbox{[}str, str\mbox{]} mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+get\+\_\+unit\+\_\+type (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Convert numeric unit type to string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Numeric unit type\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+dict\mbox{[}str, str\mbox{]}\+: Unit type as a dictionary of strings (name (short form), desc (description or full form of the unit)) 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00301}{301}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00301     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00302 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00303 \textcolor{stringliteral}{    }\textcolor{keywordflow}{if} value \textcolor{keywordflow}{in} UNIT\_TYPES\_ARRAY:}
+\DoxyCodeLine{00304         unit\_match = list(}
+\DoxyCodeLine{00305             filter(}
+\DoxyCodeLine{00306                 \textcolor{keyword}{lambda} x: x[\textcolor{stringliteral}{"{}num"{}}] == value, UNIT\_TYPES))}
+\DoxyCodeLine{00307         \textcolor{keywordflow}{return} list(}
+\DoxyCodeLine{00308             map(}
+\DoxyCodeLine{00309                 \textcolor{keyword}{lambda} x:}
+\DoxyCodeLine{00310                 \{}
+\DoxyCodeLine{00311                     \textcolor{stringliteral}{"{}name"{}}: x[\textcolor{stringliteral}{"{}name"{}}],}
+\DoxyCodeLine{00312                     \textcolor{stringliteral}{"{}desc"{}}: x[\textcolor{stringliteral}{"{}desc"{}}]}
+\DoxyCodeLine{00313                 \}, unit\_match))[0]}
+\DoxyCodeLine{00314     \textcolor{keywordflow}{if} value < 0 \textcolor{keywordflow}{or} value > 255:}
+\DoxyCodeLine{00315         \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Unit value out of range"{}})}
+\DoxyCodeLine{00316     \textcolor{keywordflow}{return} \{\textcolor{stringliteral}{"{}name"{}}: \textcolor{stringliteral}{"{}Res"{}}, \textcolor{stringliteral}{"{}desc"{}}: \textcolor{stringliteral}{"{}Reserved"{}}\}}
+\DoxyCodeLine{00317 }
+\DoxyCodeLine{00318 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a9163c6c73f67c6f13b55d1548b8c7e54}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a9163c6c73f67c6f13b55d1548b8c7e54}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!get\_unix\_timestamp@{get\_unix\_timestamp}}
+\index{get\_unix\_timestamp@{get\_unix\_timestamp}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{get\_unix\_timestamp()}{get\_unix\_timestamp()}}
+{\footnotesize\ttfamily  int mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+get\+\_\+unix\+\_\+timestamp (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+UNIX timestamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & registers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+int UNIX timestamp 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00366}{366}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00366     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00367 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00368 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} (ten\_regs[4] << 16) + ten\_regs[5]}
+\DoxyCodeLine{00369 }
+\DoxyCodeLine{00370 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ace69ec4b5a85c90457a66ba620671c4b}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ace69ec4b5a85c90457a66ba620671c4b}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!int32\_to\_ieee@{int32\_to\_ieee}}
+\index{int32\_to\_ieee@{int32\_to\_ieee}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{int32\_to\_ieee()}{int32\_to\_ieee()}}
+{\footnotesize\ttfamily  float mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+int32\+\_\+to\+\_\+ieee (\begin{DoxyParamCaption}\item[{int}]{val\+\_\+int }\end{DoxyParamCaption})}
+
+
+
+Convert Python int32 to IEEE float. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val\+\_\+int} & Value to convert to float\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+float Converted value as an IEEE floating point 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00245}{245}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00245     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00246 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00247 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} struct.unpack(\textcolor{stringliteral}{"{}f"{}}, struct.pack(\textcolor{stringliteral}{"{}I"{}}, val\_int))[0]}
+\DoxyCodeLine{00248 }
+\DoxyCodeLine{00249 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a82d01d467e168ed3cb997e22700197ab}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a82d01d467e168ed3cb997e22700197ab}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!mbus\_protocol\_version@{mbus\_protocol\_version}}
+\index{mbus\_protocol\_version@{mbus\_protocol\_version}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{mbus\_protocol\_version()}{mbus\_protocol\_version()}}
+{\footnotesize\ttfamily  int mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+mbus\+\_\+protocol\+\_\+version (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+Protocol version. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & registers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+int Protocol version 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00340}{340}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00340     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00341 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00342 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} ten\_regs[2]}
+\DoxyCodeLine{00343 }
+\DoxyCodeLine{00344 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ab9ec9fca3b4eb7009ca23e1c3dee54ab}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ab9ec9fca3b4eb7009ca23e1c3dee54ab}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!mbus\_serial@{mbus\_serial}}
+\index{mbus\_serial@{mbus\_serial}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{mbus\_serial()}{mbus\_serial()}}
+{\footnotesize\ttfamily  str mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+mbus\+\_\+serial (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+Get serial number of MBUS-\/\+GEM gateway. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & registesr\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+str serial number 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00327}{327}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00327     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00328 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00329 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} f\textcolor{stringliteral}{"{}\{ten\_regs[0]:04X\}\{ten\_regs[1]:04X\}"{}}}
+\DoxyCodeLine{00330 }
+\DoxyCodeLine{00331 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_afa7c9d1514c6a0478904e6cac9c3dfb5}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_afa7c9d1514c6a0478904e6cac9c3dfb5}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!mbus\_version@{mbus\_version}}
+\index{mbus\_version@{mbus\_version}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{mbus\_version()}{mbus\_version()}}
+{\footnotesize\ttfamily  str mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+mbus\+\_\+version (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+Protocol version. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & registers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+str Protocol version 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00353}{353}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00353     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00354 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00355 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} f\textcolor{stringliteral}{"{}\{ten\_regs[3]//100\}.\{ten\_regs[3]\%100\}"{}}}
+\DoxyCodeLine{00356 }
+\DoxyCodeLine{00357 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a8885a07dc4c3664c2fe8dbac84cf563d}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a8885a07dc4c3664c2fe8dbac84cf563d}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!meter\_flag1@{meter\_flag1}}
+\index{meter\_flag1@{meter\_flag1}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{meter\_flag1()}{meter\_flag1()}}
+{\footnotesize\ttfamily  int mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+meter\+\_\+flag1 (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+Get METER\textquotesingle{}s flag1 as integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & registers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+int flag1 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00101}{101}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00101     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00102 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00103 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} ten\_regs[8] \& 0x01}
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a607cd8aa322d949117f69db956aa6de3}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a607cd8aa322d949117f69db956aa6de3}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!meter\_flag1\_str@{meter\_flag1\_str}}
+\index{meter\_flag1\_str@{meter\_flag1\_str}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{meter\_flag1\_str()}{meter\_flag1\_str()}}
+{\footnotesize\ttfamily  str mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+meter\+\_\+flag1\+\_\+str (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+Get METER\textquotesingle{}s flag1 as string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & registers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+str flag1 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00114}{114}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00114     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00115 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00116 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} MeterFlag(ten\_regs[8] \& 0x01).name}
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{00118 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a3d8be981f7b73ebda3e50bb3fcafe589}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a3d8be981f7b73ebda3e50bb3fcafe589}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!meter\_flag2@{meter\_flag2}}
+\index{meter\_flag2@{meter\_flag2}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{meter\_flag2()}{meter\_flag2()}}
+{\footnotesize\ttfamily  int mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+meter\+\_\+flag2 (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+Get METER\textquotesingle{}s flag2 as integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & registers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+int flag2 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00127}{127}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00127     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00128 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00129 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} ((ten\_regs[8] >> 1) \& 0x01) + 2}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ae64558a62cff28c7604fffb60c4309b6}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ae64558a62cff28c7604fffb60c4309b6}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!meter\_flag2\_str@{meter\_flag2\_str}}
+\index{meter\_flag2\_str@{meter\_flag2\_str}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{meter\_flag2\_str()}{meter\_flag2\_str()}}
+{\footnotesize\ttfamily  str mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+meter\+\_\+flag2\+\_\+str (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+Get METER\textquotesingle{}s flag2 as string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & registers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+str flag2 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00140}{140}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00140     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00141 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00142 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} MeterFlag(((ten\_regs[8] >> 1) \& 0x01) + 2).name}
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00144 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a70588cf7218bb3d5ba313f61a52c1ce9}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a70588cf7218bb3d5ba313f61a52c1ce9}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!meter\_manufacturer@{meter\_manufacturer}}
+\index{meter\_manufacturer@{meter\_manufacturer}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{meter\_manufacturer()}{meter\_manufacturer()}}
+{\footnotesize\ttfamily  str mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+meter\+\_\+manufacturer (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+Convert a numeric manufacturer code to string/letters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & registers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+str Three letter code of manufacturer 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00038}{38}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00039 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00040 \textcolor{stringliteral}{    reg = ten\_regs[2]}}
+\DoxyCodeLine{00041 \textcolor{stringliteral}{    id\_1 = chr(ord("{}A"{}}) + ((reg >> 10) \& 0x1F) -\/ 1)}
+\DoxyCodeLine{00042     id\_2 = chr(ord(\textcolor{stringliteral}{"{}A"{}}) + ((reg >> 5) \& 0x1F) -\/ 1)}
+\DoxyCodeLine{00043     id\_3 = chr(ord(\textcolor{stringliteral}{"{}A"{}}) + (reg \& 0x1F) -\/ 1)}
+\DoxyCodeLine{00044     \textcolor{keywordflow}{return} f\textcolor{stringliteral}{"{}\{id\_1\}\{id\_2\}\{id\_3\}"{}}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a4daee1716ece8f99df0ba21c0661d6f7}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a4daee1716ece8f99df0ba21c0661d6f7}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!meter\_medium@{meter\_medium}}
+\index{meter\_medium@{meter\_medium}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{meter\_medium()}{meter\_medium()}}
+{\footnotesize\ttfamily  int mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+meter\+\_\+medium (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+METER\textquotesingle{}s medium. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & registers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+int medium 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00068}{68}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00069 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00070 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} ten\_regs[3] \& 0xFF}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a2acdf445015cfafb5e0ef67fb88763f4}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a2acdf445015cfafb5e0ef67fb88763f4}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!meter\_medium\_str@{meter\_medium\_str}}
+\index{meter\_medium\_str@{meter\_medium\_str}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{meter\_medium\_str()}{meter\_medium\_str()}}
+{\footnotesize\ttfamily  str mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+meter\+\_\+medium\+\_\+str (\begin{DoxyParamCaption}\item[{int }]{value = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Convert numeric medium type to string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Numeric medium type. Defaults to -\/1.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+str Medium type as a string 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00081}{81}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00082 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00083 \textcolor{stringliteral}{    }\textcolor{keywordflow}{if} value \textcolor{keywordflow}{in} MEDIUM\_TYPES\_ARRAY:}
+\DoxyCodeLine{00084         \textcolor{keywordflow}{return} list(}
+\DoxyCodeLine{00085             filter(}
+\DoxyCodeLine{00086                 \textcolor{keyword}{lambda} x: x[\textcolor{stringliteral}{"{}num"{}}] == value,}
+\DoxyCodeLine{00087                 MEDIUM\_TYPES))[0][\textcolor{stringliteral}{"{}name"{}}]}
+\DoxyCodeLine{00088     \textcolor{keywordflow}{if} value < 0 \textcolor{keywordflow}{or} value > 255:}
+\DoxyCodeLine{00089         \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Medium index is out of range"{}})}
+\DoxyCodeLine{00090     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}Reserved"{}}}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ad1f249d08ea961c4556788cf69a07905}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_ad1f249d08ea961c4556788cf69a07905}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!meter\_serial@{meter\_serial}}
+\index{meter\_serial@{meter\_serial}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{meter\_serial()}{meter\_serial()}}
+{\footnotesize\ttfamily  str mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+meter\+\_\+serial (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+Convert METER\textquotesingle{}s serial number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & registers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+str serial number 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00025}{25}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00026 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00027 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} f\textcolor{stringliteral}{"{}\{((ten\_regs[0] << 16) + ten\_regs[1]):08d\}"{}}}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a791e1a894f7c05a51a54bc45d92ab03b}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a791e1a894f7c05a51a54bc45d92ab03b}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!meter\_version@{meter\_version}}
+\index{meter\_version@{meter\_version}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{meter\_version()}{meter\_version()}}
+{\footnotesize\ttfamily  int mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+meter\+\_\+version (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+Convert METER\textquotesingle{}s version to integer value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & registers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+int version number 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00055}{55}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00056 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00057 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} ten\_regs[3] >> 8}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_af8ebb76698d1822d696ee257ca7634e0}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_af8ebb76698d1822d696ee257ca7634e0}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!register\_type@{register\_type}}
+\index{register\_type@{register\_type}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{register\_type()}{register\_type()}}
+{\footnotesize\ttfamily  int mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+register\+\_\+type (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+METER\textquotesingle{}s type as integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & registers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+int type 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00153}{153}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00153     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00154 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00155 \textcolor{stringliteral}{    register\_type\_value = abs(ten\_regs[7] >> 8)}}
+\DoxyCodeLine{00156 \textcolor{stringliteral}{    }\textcolor{keywordflow}{if} register\_type\_value \textcolor{keywordflow}{not} \textcolor{keywordflow}{in} REGISTER\_TYPES\_ARRAY:}
+\DoxyCodeLine{00157         \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Register type value out of range"{}})}
+\DoxyCodeLine{00158     \textcolor{keywordflow}{return} register\_type\_value}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_aef25123a071999681167f279630422cc}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_aef25123a071999681167f279630422cc}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!register\_type\_str@{register\_type\_str}}
+\index{register\_type\_str@{register\_type\_str}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{register\_type\_str()}{register\_type\_str()}}
+{\footnotesize\ttfamily  str mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+register\+\_\+type\+\_\+str (\begin{DoxyParamCaption}\item[{list\mbox{[}int\mbox{]}}]{ten\+\_\+regs }\end{DoxyParamCaption})}
+
+
+
+METER\textquotesingle{}s type as string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ten\+\_\+regs} & registers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+str type 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00169}{169}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00169     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00170 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00171 \textcolor{stringliteral}{    register\_type\_value = abs(ten\_regs[7] >> 8)}}
+\DoxyCodeLine{00172 \textcolor{stringliteral}{    }\textcolor{keywordflow}{if} register\_type\_value \textcolor{keywordflow}{not} \textcolor{keywordflow}{in} REGISTER\_TYPES\_ARRAY:}
+\DoxyCodeLine{00173         \textcolor{keywordflow}{raise} Exception(\textcolor{stringliteral}{"{}Register type value out of range"{}})}
+\DoxyCodeLine{00174     \textcolor{keywordflow}{return} RegisterType(register\_type\_value).name}
+\DoxyCodeLine{00175 }
+\DoxyCodeLine{00176 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_afe5c1f76aefd4841ef1db0b74b770de3}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_afe5c1f76aefd4841ef1db0b74b770de3}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!two\_words\_to\_ieee@{two\_words\_to\_ieee}}
+\index{two\_words\_to\_ieee@{two\_words\_to\_ieee}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{two\_words\_to\_ieee()}{two\_words\_to\_ieee()}}
+{\footnotesize\ttfamily  float mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+two\+\_\+words\+\_\+to\+\_\+ieee (\begin{DoxyParamCaption}\item[{int}]{val\+\_\+one,  }\item[{int}]{val\+\_\+two }\end{DoxyParamCaption})}
+
+
+
+Convert two words (16 bit) to IEEE float (32 bit). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val\+\_\+one} & The first value (16 bit) \\
+\hline
+{\em val\+\_\+two} & The second value (16 bit)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+float Combined IEEE float (32 bit) 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00259}{259}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00259     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00260 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00261 \textcolor{stringliteral}{    val\_int32 = two\_words\_to\_long(val\_one, val\_two)}}
+\DoxyCodeLine{00262 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} int32\_to\_ieee(val\_int32)}
+\DoxyCodeLine{00263 }
+\DoxyCodeLine{00264 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a404960418e918e1fa24378f43869a148}\label{namespacembus__gem__decoder_1_1conversion_1_1utils_1_1helpers_a404960418e918e1fa24378f43869a148}} 
+\index{mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}!two\_words\_to\_long@{two\_words\_to\_long}}
+\index{two\_words\_to\_long@{two\_words\_to\_long}!mbus\_gem\_decoder.conversion.utils.helpers@{mbus\_gem\_decoder.conversion.utils.helpers}}
+\doxyparagraph{\texorpdfstring{two\_words\_to\_long()}{two\_words\_to\_long()}}
+{\footnotesize\ttfamily  int mbus\+\_\+gem\+\_\+decoder.\+conversion.\+utils.\+helpers.\+two\+\_\+words\+\_\+to\+\_\+long (\begin{DoxyParamCaption}\item[{int}]{val\+\_\+one,  }\item[{int}]{val\+\_\+two }\end{DoxyParamCaption})}
+
+
+
+Convert two words (16 bit) to long (32 bit). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val\+\_\+one} & The first value (16 bit) \\
+\hline
+{\em val\+\_\+two} & The second value (16 bit)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+
+int Combined long (32 bit) 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{helpers_8py_source_l00274}{274}} of file \mbox{\hyperlink{helpers_8py_source}{helpers.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00274     \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00275 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00276 \textcolor{stringliteral}{    }\textcolor{keywordflow}{return} (val\_one << 16) + val\_two}
+\DoxyCodeLine{00277 }
+\DoxyCodeLine{00278 }
+
+\end{DoxyCode}
